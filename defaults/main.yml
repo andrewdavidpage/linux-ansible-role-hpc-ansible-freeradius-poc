@@ -9,7 +9,7 @@ freeradius3_version: "3.0.16+dfsg-1ubuntu3"
 freeradius_perl_module_path: "{% raw %}${modconfdir}/${.:instance}/privacyidea.pl{% endraw %}"
 
 freeradius3_plugins:
-   - freeradius-common
+   #- freeradius-common
    - freeradius-krb5
    - freeradius-ldap
    - freeradius-utils

@@ -1,7 +1,7 @@
 ---
 # tasks file for ansible-freeradius-generic
 
-- name: Install FreeRADIUS package for RHEL 18.x
+- name: Install FreeRADIUS package for RHEL 8.x
   become: yes
   ansible.builtin.yum:
     name:
