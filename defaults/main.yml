@@ -8,8 +8,8 @@ freeradius3_version: "3.0.16+dfsg-1ubuntu3"
 # will be used if perl mod is enable in the freeradius3_mods_enabled variable
 freeradius_perl_module_path: "{% raw %}${modconfdir}/${.:instance}/privacyidea.pl{% endraw %}"
 
+# Removed freeradius-common from the list below
 freeradius3_plugins:
-   #- freeradius-common
    - freeradius-krb5
    - freeradius-ldap
    - freeradius-utils
