@@ -1,29 +1,11 @@
 ---
 # tasks file for ansible-freeradius-generic
 
-- name: Add freeradius repo for Ubuntu 16.04
-  become: yes
-  apt_repository:
-    repo: "{{ freeradius3_repo }}"
+- name: Install FreeRADIUS package for RHEL 18.x
+  ansible.builtin.yum:
+    name:
+      - freeradius
     state: present
-  when: ansible_distribution_version == '16.04'
-
-- name: Install freeradius package for Ubuntu 16.04
-  become: yes
-  apt:
-    name: freeradius
-    state: latest
-    update_cache: yes
-    cache_valid_time: 3600
-  when: ansible_distribution_version == '16.04'
-
-- name: Install freeradius package for Ubuntu 18.04
-  become: yes
-  apt:
-    name: "freeradius={{ freeradius3_version }}"
-    update_cache: yes
-    cache_valid_time: 3600
-  when: ansible_distribution_version == '18.04'
 
 # required by the freeradius-ldap module
 - name: start freeradius
