@@ -2,10 +2,13 @@
 # tasks file for ansible-freeradius-generic
 
 - name: Install FreeRADIUS package for RHEL 18.x
+  become: yes
   ansible.builtin.yum:
     name:
       - freeradius
-    state: present
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600
 
 # required by the freeradius-ldap module
 - name: start freeradius
@@ -19,7 +22,7 @@
 
 - name: Install freeradius modules
   become: yes
-  apt:
+  ansible.builtin.yum:
     name: "{{ freeradius3_plugins }}"
     state: latest
     update_cache: yes
