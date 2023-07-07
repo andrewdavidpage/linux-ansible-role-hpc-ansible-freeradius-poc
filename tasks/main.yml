@@ -8,7 +8,6 @@
       - freeradius
     state: latest
     update_cache: yes
-    cache_valid_time: 3600
 
 # required by the freeradius-ldap module
 - name: start freeradius
@@ -26,7 +25,6 @@
     name: "{{ freeradius3_plugins }}"
     state: latest
     update_cache: yes
-    cache_valid_time: 3600
 
 - name: Create Freeradius users configuration file
   become: yes
