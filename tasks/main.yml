@@ -30,7 +30,8 @@
   become: yes
   template:
     src: "etc/freeradius/mods-config/files/authorize.j2"
-    dest: "/etc/freeradius{{ item }}/mods-config/files/authorize"
+    #dest: "/etc/freeradius{{ item }}/mods-config/files/authorize"
+    dest: "/etc/raddb/mods-config/files/authorize"
     owner: root
     group: freerad
     mode: 0640
@@ -43,7 +44,7 @@
   become: yes
   template:
     src: "etc/freeradius/dictionary.j2"
-    dest: "/etc/freeradius{{ item }}/dictionary"
+    dest: "/etc/raddb/dictionary"
     owner: root
     group: freerad
     mode: 0640
@@ -56,7 +57,7 @@
   become: yes
   template:
     src: "etc/freeradius/radiusd.conf.j2"
-    dest: "/etc/freeradius{{ item }}/radiusd.conf"
+    dest: "/etc/raddb/radiusd.conf"
     owner: root
     group: freerad
     mode: 0640
@@ -69,7 +70,7 @@
   become: yes
   template:
     src: etc/freeradius/clients.conf.j2
-    dest: /etc/freeradius{{ item }}/clients.conf
+    dest: /etc/raddb/clients.conf
     owner: root
     group: freerad
     mode: 0640
@@ -91,7 +92,7 @@
   become: yes
   template:
     src: "etc/freeradius/mods-available/perl.j2"
-    dest: "/etc/freeradius{{ item }}/mods-available/perl"
+    dest: "/etc/raddb/mods-available/perl"
     owner: root
     group: freerad
     mode: 0640
@@ -105,7 +106,7 @@
   become: yes
   template:
     src: "etc/freeradius/mods-available/ldap.j2"
-    dest: "/etc/freeradius{{ item }}/mods-available/ldap"
+    dest: "/etc/raddb/mods-available/ldap"
     owner: root
     group: freerad
     mode: 0640
@@ -119,7 +120,7 @@
   become: yes
   template:
     src: "etc/freeradius/mods-available/cache.j2"
-    dest: "/etc/freeradius{{ item }}/mods-available/cache"
+    dest: "/etc/raddb/mods-available/cache"
     owner: root
     group: freerad
     mode: 0640
@@ -133,7 +134,7 @@
   become: yes
   template:
     src: "etc/freeradius/mods-available/rest.j2"
-    dest: "/etc/freeradius{{ item }}/mods-available/rest"
+    dest: "/etc/raddb/mods-available/rest"
     owner: root
     group: freerad
     mode: 0640
@@ -168,7 +169,7 @@
   become: yes
   template:
     src: "etc/freeradius/sites-enabled/default.j2"
-    dest: "/etc/freeradius{{ item }}/sites-enabled/default"
+    dest: "/etc/raddb/sites-enabled/default"
     owner: root
     group: freerad
     mode: 0644
