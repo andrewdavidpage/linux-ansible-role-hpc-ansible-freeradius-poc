@@ -1,6 +1,11 @@
 ---
 # tasks file for ansible-freeradius-generic
 
+- name: Create group
+  group:
+    name: freerad
+    state: present
+
 - name: Install FreeRADIUS package for RHEL 8.x
   become: yes
   ansible.builtin.yum:
