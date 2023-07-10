@@ -27,7 +27,7 @@ hostname_lookups = no
 
 {% if freeradius3_radiusd_log is defined %}
 log {
-{% for key,value in freeradius3_radiusd_log.iteritems() | sort %}
+{% for key,value in freeradius3_radiusd_log.items() | sort %}
   {{ key }} = {{ value }}
 {% endfor %}
   msg_denied = "You are already logged in - access denied"
