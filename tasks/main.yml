@@ -18,7 +18,7 @@
 - name: start freeradius
   become: yes
   service:
-    name: freeradius
+    name: radiusd
     state: started
     enabled: yes
     use: service
